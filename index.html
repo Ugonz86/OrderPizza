@@ -3,6 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
     <title>Gallo's Pizza</title>
@@ -10,78 +11,103 @@
   <body>
     <div class="container">
       <h1>GALLO</h1>
-      <h5>True Italian Flavor</h5>
+      <h5>TRUE ITALIAN FLAVOR</h5>
       <hr>
       <div id="orderForm">
-        <div class="jumbotron" id="intro">
-          <h1>Benvenuti!</h1>
-          <button type="button" class="btn btn-dark" id="introButton">Start your order</button>
+        <div class="container" id="intro">
+          <hr>
+          <h2>Benvenuti!</h2>
+          <hr>
+          <button type="button" class="btn btn-default" id="introButton">Start your order</button>
         </div>
 
-          <div class="jumbotron" id="sizeMenu">
+          <div class="container" id="sizeMenu">
             <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="Personale" checked> Personale
-                </label>
+              <hr>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="size" value="Personale" checked> Personale
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="Per Due"> Per Due
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="size" value="Per Due"> Per Due
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="Per Quattro"> Per Quattro
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="size" value="Per Quattro"> Per Quattro
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="Per Otto"> Per Otto
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="size" value="Per Otto"> Per Otto
+
               </div>
                 <hr>
-                <button type="button" class="btn btn-dark" id="sizeMenuButton">Add Toppings</button>
+                <button type="button" class="btn btn-default" id="sizeMenuButton">Add Toppings</button>
               </div>
             </div>
 
-          <div class="jumbotron" id="toppingMenu">
+          <div class="container" id="toppingMenu">
             <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="topping" value="Pepperoni" checked> Pepperoni
-                </label>
+              <hr>
+              <div class="checkbox">
+                  <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="topping" value="Prosciutto"> Prosciutto
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="topping" value="Prosciutto"> Prosciutto
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="topping" value="Sausage"> Sausage
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="topping" value="Sausage"> Sausage
+
               </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="topping" value="Basil"> Basil
-                </label>
+              <div class="checkbox">
+
+                  <input type="checkbox" name="topping" value="Basil"> Basil
+
               </div>
               <hr>
-              <button type="button" class="btn btn-dark" id="toppingMenuButton">Your Order Summary</button>
+              <button type="button" class="btn btn-default" id="toppingMenuButton">Your Order Summary</button>
             </div>
           </div>
 
-          <div class="jumbotron" id="subtotal">
+          <div class="container" id="subtotal">
             <h3>Your Order Summary</h3>
             <hr>
-            <button type="button" class="btn btn-dark" id="subtotalButton">Complete Your Order</button>
+            <div class="grid-container">
+              <label for="size">Pizza Size:</label>
+              <div class="grid-item" id="size"></div>
+              <hr>
+              <label for="size">Quantity:</label>
+              <div class="grid-item" id="sizeQuantity"></div>
+              <hr>
+              <label for="size">Toppings:</label>
+              <div class="grid-item" id="toppingList"></div>
+              <hr>
+              <label for="size">Total:</label>
+              <div class="grid-item" id="total"></div>
+              <hr>
+
+            </div>
+
+            <!-- <p>Size: $<span id="cart"></span></p>
+            <br>
+            <ul><span id="items"></span></ul> -->
+            <hr>
+            <button type="button" class="btn btn-default" id="subtotalButton">Complete Your Order</button>
+            <button type="button" class="btn btn-default" id="modifyOrder">Modify Your Order</button>
           </div>
 
-          <div class="jumbotron" id="receipt">
-            <h3>Thank you for visiting GALLO's!</h3>
+          <div class="container" id="receipt">
             <hr>
-            <button type="button" class="btn btn-dark" id="receiptButton">Go Home</button>
+            <h3>Thank you for your visit. Arrivederci!</h3>
+            <hr>
+            <button type="button" class="btn btn-default" id="receiptButton">Go Home</button>
           </div>
 
       </div>
