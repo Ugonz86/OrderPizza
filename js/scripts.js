@@ -7,24 +7,28 @@ function Order(size, topping) {
 
 //Prototype Method for the price
 Order.prototype.price = function() {
-  var price = 10;
+  var price = 10.00;
 
   if(this.size === "Per Due") {
-    price += 5;
+    price += 5.00;
   } else if (this.size === "Per Quattro") {
-    price += 10;
+    price += 10.00;
   } else if (this.size === "Per Otto") {
-    price += 15;
+    price += 15.00;
   }
 
-  if(this.topping === "Pepperoni") {
-  price += 3;
-  } else if (this.topping === "Prosciutto") {
-    price += 4;
-  } else if (this.topping === "Sausage") {
-    price += 2;
-  } else if (this.topping === "Basil") {
-    price += 1;
+  for (var i = 0; i < this.topping.length; i++) {
+    console.log("het");
+
+    if(this.topping[i].value === "Pepperoni") {
+      price += 3;
+    } else if (this.topping[i].value === "Prosciutto") {
+      price += 4;
+    } else if (this.topping[i].value === "Sausage") {
+      price += 2;
+    } else if (this.topping[i].value === "Basil") {
+      price += 1;
+    }
   }
   console.log(price);
   return price;
@@ -33,8 +37,9 @@ Order.prototype.price = function() {
 
 //Front end user logic
 var selectedSize;
-var selectedTopping;
+var selectedTopping = [];
 var newOrder;
+var total;
 
 $(document).ready(function() {
 
@@ -47,7 +52,7 @@ $(document).ready(function() {
     $("#toppingMenu").fadeIn();
     $("#sizeMenu").hide();
 
-    selectedSize = $("input:radio[name=size]:checked").val();
+    selectedSize = $("input:checkbox[name=size]:checked").val();
 
   });
 
@@ -55,13 +60,18 @@ $(document).ready(function() {
     $("#subtotal").fadeIn();
     $("#toppingMenu").hide();
 
-    selectedTopping = $("input:radio[name=topping]:checked").val();
-    newOrder = new Order(selectedSize, selectedTopping);
-    console.log(newOrder.price());
+    $("#size").append(selectedSize);
+    selectedTopping = $("input:checkbox[name=topping]:checked").each(function() {
+      var multipleSelection = $(this).val();
+      $("#toppingList").append(multipleSelection + "<br>");
+    });
+
+    newOrder = new Order(selectedSize, selectedTopping); //Total
+    $("#total").text("$" + newOrder.price());
   });
 
   $("#subtotalButton").click(function() {
-    $("#subtotal").text(newOrder.price());
+
     console.log(newOrder.price());
     $("#receipt").fadeIn();
     $("#subtotal").hide();
