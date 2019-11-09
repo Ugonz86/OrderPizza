@@ -1,20 +1,65 @@
-h1, h5, h3 {
+body {
+  /* background-color: #6e593f; */
+}
+
+h1 {
+  letter-spacing: 5px;
+  color: #aed100;
+  font-size: 400%;
+  text-shadow: grey 1px 1px 3px;
+}
+
+h3 {
+  color: grey;
+
+}
+h5 {
+  color: lightgrey;
   letter-spacing: 5px;
 }
 
 .container {
 text-align: center;
-margin-top: 50px;
+margin-top: 30px;
 }
 
-.jumbotron {
+/* .jumbotron {
   border-radius: 10px;
+  height: 300px;
 
+} */
+.grid-container {
+  display: inline-grid;
+  /* grid-template-columns: 200px 200px ;
+  grid-template-rows: 200px 200px ; */
+}
+.grid-item {
+  /* border: 1px solid grey; */
+  /* border-radius: 20px; */
+  /* padding: 75px; */
+  text-align: center;
+
+  /* font-size: 30px; */
+  /* font-weight: bold; */
 }
 
-.radio {
-  text-align: left;
-}
 #sizeMenu, #toppingMenu, #subtotal, #receipt {
   display: none;
+}
+
+#intro, #sizeMenu, #toppingMenu, #receipt {
+  border-radius: 50px;
+  background-color: #ebebeb;
+  padding: 10px;
+  height: 250px;
+  color: #333;
+  /* padding-left: 30px; */
+  /* text-align: left; */
+}
+
+#subtotal {
+  border-radius: 50px;
+  background-color: #ebebeb;
+  padding: 10px;
+  color: #333;
 }
