@@ -1,0 +1,20 @@
+h1, h5, h3 {
+  letter-spacing: 5px;
+}
+
+.container {
+text-align: center;
+margin-top: 50px;
+}
+
+.jumbotron {
+  border-radius: 10px;
+
+}
+
+.radio {
+  text-align: left;
+}
+#sizeMenu, #toppingMenu, #subtotal, #receipt {
+  display: none;
+}
