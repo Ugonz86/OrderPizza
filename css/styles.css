@@ -10,21 +10,23 @@ body {
 }
 
 h1 {
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   color: #aed100;
-  font-size: 500%;
+  font-size: 600%;
   text-shadow: grey 1px 1px 3px;
 }
 
-h3, h2 {
+h3 {
   color: white;
   letter-spacing: 5px;
+  font-size: 200%;
 
 }
 
 h5 {
   color: lightgrey;
   letter-spacing: 5px;
+  font-size: 150%;
 }
 
 .container {
@@ -50,4 +52,5 @@ margin-top: 30px;
   width: inherit;
   margin-top: 100px;
   color: white;
+
 }
