@@ -1,18 +1,28 @@
+
+html {
+    height: 100%;
+    background:url('../img/pizza.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: black;
+}
+
 body {
-  /* background-color: #6e593f; */
+  background-color: transparent;
 }
 
 h1 {
   letter-spacing: 5px;
   color: #aed100;
-  font-size: 400%;
+  font-size: 500%;
   text-shadow: grey 1px 1px 3px;
 }
 
-h3 {
-  color: grey;
+h3, h2 {
+  color: white;
+  letter-spacing: 5px;
 
 }
+
 h5 {
   color: lightgrey;
   letter-spacing: 5px;
@@ -21,45 +31,24 @@ h5 {
 .container {
 text-align: center;
 margin-top: 30px;
+
 }
 
-/* .jumbotron {
-  border-radius: 10px;
-  height: 300px;
-
-} */
 .grid-container {
   display: inline-grid;
-  /* grid-template-columns: 200px 200px ;
-  grid-template-rows: 200px 200px ; */
 }
 .grid-item {
-  /* border: 1px solid grey; */
-  /* border-radius: 20px; */
-  /* padding: 75px; */
   text-align: center;
-
-  /* font-size: 30px; */
-  /* font-weight: bold; */
 }
 
 #sizeMenu, #toppingMenu, #subtotal, #receipt {
   display: none;
 }
 
-#intro, #sizeMenu, #toppingMenu, #receipt {
-  border-radius: 50px;
-  background-color: #ebebeb;
-  padding: 10px;
-  height: 250px;
-  color: #333;
-  /* padding-left: 30px; */
-  /* text-align: left; */
-}
-
-#subtotal {
-  border-radius: 50px;
-  background-color: #ebebeb;
-  padding: 10px;
-  color: #333;
+#intro, #sizeMenu, #toppingMenu, #receipt, #subtotal {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  margin-top: 100px;
+  color: white;
 }
