@@ -44,21 +44,21 @@ $(document).ready(function() {
 
 
   $("#introButton").click(function() {
-    $("#sizeMenu").slideDown();
-    $("#intro").slideUp();
+    $("#sizeMenu").fadeIn();
+    $("#intro").hide();
   });
 
   $("#sizeMenuButton").click(function() {
-    $("#toppingMenu").slideDown();
-    $("#sizeMenu").slideUp();
+    $("#toppingMenu").fadeIn();
+    $("#sizeMenu").hide();
 
     selectedSize = $("input:radio[name=size]:checked").val();
 
   });
 
   $("#toppingMenuButton").click(function() {
-    $("#subtotal").slideDown("slow");
-    $("#toppingMenu").slideUp();
+    $("#subtotal").fadeIn("slow");
+    $("#toppingMenu").hide();
 
     // $("#totalDisplay").slideDown("slow");
 
@@ -76,8 +76,8 @@ $(document).ready(function() {
   $("#subtotalButton").click(function() {
 
     console.log(newOrder.price());
-    $("#receipt").slideDown();
-    $("#subtotal").slideUp();
+    $("#receipt").fadeIn();
+    $("#subtotal").hide();
   });
 
   $("#receiptButton").click(function() {
