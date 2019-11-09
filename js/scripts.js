@@ -34,7 +34,6 @@ Order.prototype.price = function() {
   return price;
 };
 
-
 //Front end user logic
 var selectedSize;
 var selectedTopping = [];
@@ -43,38 +42,42 @@ var total;
 
 $(document).ready(function() {
 
+
   $("#introButton").click(function() {
-    $("#sizeMenu").fadeIn();
-    $("#intro").hide();
+    $("#sizeMenu").slideDown();
+    $("#intro").slideUp();
   });
 
   $("#sizeMenuButton").click(function() {
-    $("#toppingMenu").fadeIn();
-    $("#sizeMenu").hide();
+    $("#toppingMenu").slideDown();
+    $("#sizeMenu").slideUp();
 
-    selectedSize = $("input:checkbox[name=size]:checked").val();
+    selectedSize = $("input:radio[name=size]:checked").val();
 
   });
 
   $("#toppingMenuButton").click(function() {
-    $("#subtotal").fadeIn();
-    $("#toppingMenu").hide();
+    $("#subtotal").slideDown("slow");
+    $("#toppingMenu").slideUp();
 
-    $("#size").append(selectedSize);
-    selectedTopping = $("input:checkbox[name=topping]:checked").each(function() {
+    // $("#totalDisplay").slideDown("slow");
+
+    $("#size").append(selectedSize); // Displays Pizza Size In Subtotal
+
+    selectedTopping = $("input:checkbox[name=topping]:checked").each(function() { // Displays Topping Selection (s) In Subtotal
       var multipleSelection = $(this).val();
       $("#toppingList").append(multipleSelection + "<br>");
     });
 
-    newOrder = new Order(selectedSize, selectedTopping); //Total
-    $("#total").text("$" + newOrder.price());
+    newOrder = new Order(selectedSize, selectedTopping); //Display Purchase Total
+    $("#total").text("$" + newOrder.price() + ".00");
   });
 
   $("#subtotalButton").click(function() {
 
     console.log(newOrder.price());
-    $("#receipt").fadeIn();
-    $("#subtotal").hide();
+    $("#receipt").slideDown();
+    $("#subtotal").slideUp();
   });
 
   $("#receiptButton").click(function() {
