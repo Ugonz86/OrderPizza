@@ -12,46 +12,51 @@
     <div class="container">
       <h1>GALLO</h1>
       <h5>TRUE ITALIAN FLAVOR</h5>
-      <hr>
+      <br>
       <div id="orderForm">
         <div class="container" id="intro">
-          <hr>
           <h2>Benvenuti!</h2>
-          <hr>
+          <br>
           <button type="button" class="btn btn-default" id="introButton">Start your order</button>
+          <br>
+          <br>
+
         </div>
 
           <div class="container" id="sizeMenu">
             <div class="form-group">
-              <hr>
-              <div class="checkbox">
-
-                  <input type="checkbox" name="size" value="Personale" checked> Personale
-
-              </div>
-              <div class="checkbox">
-
-                  <input type="checkbox" name="size" value="Per Due"> Per Due
+              <div class="radio">
+                <h3>Select One Pizza Size</h3>
+                <br>
+                <label>
+                  <input type="radio" name="size" value="Personale" checked> Personale
+                </label>
 
               </div>
-              <div class="checkbox">
-
-                  <input type="checkbox" name="size" value="Per Quattro"> Per Quattro
-
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Per Due"> Per Due
+                </label>
               </div>
-              <div class="checkbox">
-
-                  <input type="checkbox" name="size" value="Per Otto"> Per Otto
-
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Per Quattro"> Per Quattro
+                </label>
               </div>
-                <hr>
-                <button type="button" class="btn btn-default" id="sizeMenuButton">Add Toppings</button>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Per Otto"> Per Otto
+                </label>
+              </div>
+                <br>
+                <button type="button" class="btn btn-default" id="sizeMenuButton">Next</button>
+                <br>
               </div>
             </div>
 
           <div class="container" id="toppingMenu">
             <div class="form-group">
-              <hr>
+              <h3>Add Toppings. You Can Add Multiple</h3>
               <div class="checkbox">
                   <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
 
@@ -71,15 +76,17 @@
                   <input type="checkbox" name="topping" value="Basil"> Basil
 
               </div>
-              <hr>
+              <br>
               <button type="button" class="btn btn-default" id="toppingMenuButton">Your Order Summary</button>
+              <br>
+
             </div>
           </div>
 
           <div class="container" id="subtotal">
             <h3>Your Order Summary</h3>
-            <hr>
-            <div class="grid-container">
+            <br>
+            <div class="grid-container" id="totalDisplay">
               <label for="size">Pizza Size:</label>
               <div class="grid-item" id="size"></div>
               <hr>
@@ -91,27 +98,28 @@
               <hr>
               <label for="size">Total:</label>
               <div class="grid-item" id="total"></div>
-              <hr>
+              <br>
 
             </div>
-
-            <!-- <p>Size: $<span id="cart"></span></p>
             <br>
-            <ul><span id="items"></span></ul> -->
-            <hr>
+
+            <br>
             <button type="button" class="btn btn-default" id="subtotalButton">Complete Your Order</button>
             <button type="button" class="btn btn-default" id="modifyOrder">Modify Your Order</button>
+            <button type="button" class="btn btn-default" id="addPizza">Add Another Pizza</button>
+            <br>
+            <br>
           </div>
 
           <div class="container" id="receipt">
-            <hr>
+            <br>
             <h3>Thank you for your visit. Arrivederci!</h3>
-            <hr>
+            <br>
             <button type="button" class="btn btn-default" id="receiptButton">Go Home</button>
+            <br>
+            <br>
           </div>
-
       </div>
     </div>
-
   </body>
 </html>
