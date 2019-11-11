@@ -1,12 +1,28 @@
-// Business Logic
+// Business Logic for Order
+//Object Constructor for Order
+function Order() {
+  this.pizzas = [];
+  this.total = 0;
+  this.currentId = -1;
+};
+//Order prototype methods
+Order.prototype.addPizza = function (pizza) {
+  pizza.id = this.assignId();
+  this.pizzas.push(pizza);
+  this.total += pizza.price();
+}
+Order.prototype.assignId = function() {
+  this.currentId ++;
+  return this.currentId;
+}
+// Business Logic for Pizza
 //Object Constructor for Pizza
-function Order(size, topping) {
+function Pizza (size, topping) {
   this.size = size;
   this.topping = topping;
-};
-
-//Prototype Method for the price
-Order.prototype.price = function() {
+}
+//Price prototype Method
+Pizza.prototype.price = function() {
   var price = 10.00;
 
   if(this.size === "Per Due") {
@@ -20,13 +36,13 @@ Order.prototype.price = function() {
   for (var i = 0; i < this.topping.length; i++) {
     console.log("het");
 
-    if(this.topping[i].value === "Pepperoni") {
+    if(this.topping[i] === "Pepperoni") {
       price += 3;
-    } else if (this.topping[i].value === "Prosciutto") {
+    } else if (this.topping[i] === "Prosciutto") {
       price += 4;
-    } else if (this.topping[i].value === "Sausage") {
+    } else if (this.topping[i] === "Sausage") {
       price += 2;
-    } else if (this.topping[i].value === "Basil") {
+    } else if (this.topping[i] === "Basil") {
       price += 1;
     }
   }
@@ -34,14 +50,25 @@ Order.prototype.price = function() {
   return price;
 };
 
-//Front end user logic
+//User interface logic
+//Global variables
 var selectedSize;
 var selectedTopping = [];
-var newOrder;
+var order = new Order();
+var newPizza;
 var total;
 
-$(document).ready(function() {
+function displayOrdersDetail(orderListToDisplay) {
+  var orderList = $("ul#orders");
+  var details = "";
+  orderListToDisplay.pizzas.forEach(function(pizza) {
+    details += "<li id=" + pizza.id + ">" + pizza.size + " " + "with" + " " + pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
+  });
+  orderList.html(details);
+  $("#total").text(order.total);//Display Purchase Total
+};
 
+$(document).ready(function() {
 
   $("#introButton").click(function() {
     $("#sizeMenu").fadeIn();
@@ -51,35 +78,37 @@ $(document).ready(function() {
   $("#sizeMenuButton").click(function() {
     $("#toppingMenu").fadeIn();
     $("#sizeMenu").hide();
-
     selectedSize = $("input:radio[name=size]:checked").val();
-
   });
 
   $("#toppingMenuButton").click(function() {
     $("#subtotal").fadeIn("slow");
     $("#toppingMenu").hide();
 
-    // $("#totalDisplay").slideDown("slow");
+    //Subtotal Display
 
-    $("#size").append(selectedSize); // Displays Pizza Size In Subtotal
-
-    selectedTopping = $("input:checkbox[name=topping]:checked").each(function() { // Displays Topping Selection (s) In Subtotal
-      var multipleSelection = $(this).val();
-      $("#toppingList").append(multipleSelection + "<br>");
+    $("input:checkbox[name='topping']:checked").each(function(){
+      selectedTopping.push($(this).val());
     });
-
-    newOrder = new Order(selectedSize, selectedTopping); //Display Purchase Total
-    $("#total").text("$" + newOrder.price() + ".00");
+    console.log(selectedTopping);
+    newPizza = new Pizza(selectedSize, selectedTopping);
+    selectedTopping = [];//Clear array for next pizza
+    order.addPizza(newPizza);
+    displayOrdersDetail(order);
   });
 
   $("#subtotalButton").click(function() {
-
-    console.log(newOrder.price());
     $("#receipt").fadeIn();
     $("#subtotal").hide();
   });
+  $("#cancelOrder").click(function() {
+    location.reload();
+  });
+  $("#addPizza").click(function() {
 
+    $("#sizeMenu").fadeIn();
+    $("#subtotal").hide();
+  });
   $("#receiptButton").click(function() {
     location.reload();
   });
