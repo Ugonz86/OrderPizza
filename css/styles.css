@@ -7,39 +7,53 @@ html {
 
 body {
   background-color: transparent;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1 {
   letter-spacing: 10px;
   color: #aed100;
   font-size: 600%;
-  text-shadow: grey 1px 1px 3px;
+  font-weight: bold;
+  text-shadow: black 1px 1px 3px;
 }
 
 h3 {
   color: white;
   letter-spacing: 5px;
   font-size: 200%;
-
+  text-shadow: black 1px 1px 3px;
 }
 
 h5 {
   color: lightgrey;
   letter-spacing: 5px;
   font-size: 150%;
+  font-weight: bold;
+  text-shadow: black 1px 1px 3px;
 }
 
 .container {
 text-align: center;
 margin-top: 30px;
-
 }
 
-.grid-container {
+/* .grid-container {
   display: inline-grid;
-}
+} */
 .grid-item {
   text-align: center;
+}
+
+.radio {
+  text-align: left;
+  padding: 10px;
+}
+
+.checkbox {
+  text-align: left;
+  padding: 10px;
+  padding-left: 30px;
 }
 
 #sizeMenu, #toppingMenu, #subtotal, #receipt {
@@ -50,7 +64,15 @@ margin-top: 30px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
-  margin-top: 100px;
+  margin-top: 30px;
   color: white;
+}
 
+#orders {
+  text-align: left;
+}
+
+p {
+  font-size: 30px;
+  text-shadow: black 1px 1px 3px;
 }
