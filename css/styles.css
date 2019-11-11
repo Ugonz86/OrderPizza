@@ -18,31 +18,20 @@ h1 {
   text-shadow: black 1px 1px 3px;
 }
 
-<<<<<<< HEAD
 h3 {
   color: white;
   letter-spacing: 5px;
   font-size: 200%;
   text-shadow: black 1px 1px 3px;
 }
-=======
-/* h3 {
-  color: white;
-  letter-spacing: 5px;
-  font-size: 250%;
-} */
->>>>>>> master
 
 h5 {
   color: lightgrey;
   letter-spacing: 5px;
-<<<<<<< HEAD
   font-size: 150%;
   font-weight: bold;
   text-shadow: black 1px 1px 3px;
-=======
   font-size: 110%;
->>>>>>> master
 }
 
 .container {
@@ -50,9 +39,6 @@ text-align: center;
 margin-top: 30px;
 }
 
-/* .grid-container {
-  display: inline-grid;
-} */
 .grid-item {
   text-align: center;
 }
