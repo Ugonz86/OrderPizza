@@ -23,8 +23,8 @@
         </div>
           <div class="container" id="sizeMenu">
             <div class="form-group">
-              <h3>Select Pizza Size.</h3>
-              <h4>Our pizzas come with puréed tomatoes, mozzarella and authentic italian ingredients.</h4>
+              <h3>Select Pizza Size</h3>
+              <h2>Our pizzas come with puréed tomatoe base, mozzarella and authentic italian herbs.</h2>
               <br>
               <div class="radio">
                 <label>
@@ -54,6 +54,7 @@
           <div class="container" id="toppingMenu">
             <div class="form-group">
               <h3>Add Toppings</h3>
+              <h2>You may add one, multiple or none.</h2>
               <div class="checkbox">
                 <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
               </div>
@@ -65,6 +66,12 @@
               </div>
               <div class="checkbox">
                 <input type="checkbox" name="topping" value="Basil"> Basil
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="topping" value="Arugula"> Arugula
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="topping" value="Blue Cheese"> Blue Cheese
               </div>
               <br>
               <button type="button" class="btn btn-default" id="toppingMenuButton">Your Order Summary</button>
@@ -80,19 +87,45 @@
             <br>
             <button type="button" class="btn btn-success" id="subtotalButton">Complete Your Order</button>
             <button type="button" class="btn btn-info" id="addPizza">Add Another Pizza</button>
+            <button type="button" class="btn btn-danger" id="modifyOrderButton">Modify Your Order</button>
+            <br>
+            <br>
+          </div>
+
+          <div class="container" id="modifyOrder">
+            <h3>Modify Your Order</h3>
+            <br>
+            <button type="button" class="btn btn-success" id="addChangesToSubtotal">Add Modifications</button>
+            <button type="button" class="btn btn-info" id="modifyToppings">Modify Toppings</button>
+            <button type="button" class="btn btn-danger" id="removePizza">Remove Pizza</button>
+            <br>
+            <br>
+          </div>
+
+          <div class="container" id=receipt>
+            <h3>Your Order Total Is:</h3>
+            <h2>$<span id="total2"></span>.00</h2>
+            <br>
+            <button type="button" class="btn btn-success" id="receiptButton">Complete Your Order</button>
+            <button type="button" class="btn btn-info" id="requestDelivery">Request Delivery</button>
             <button type="button" class="btn btn-danger" id="cancelOrder">Cancel Your Order</button>
             <br>
             <br>
           </div>
-          <div class="container" id="receipt">
+
+          <div class="container" id="thankYou">
             <br>
-            <h3>Thank you for your visit. <em>Arrivederci!</em></h3>
+            <h3>Thank you for your visit. <em id="bye">Arrivederci!</em></h3>
             <br>
-            <button type="button" class="btn btn-default" id="receiptButton">Go Home</button>
+            <button type="button" class="btn btn-default" id="thankYouButton">Go Home</button>
             <br>
             <br>
           </div>
       </div>
+    </div>
+    <br>
+    <div class="footer">
+      <h4>Our Address and phone number goes here</h4>
     </div>
   </body>
 </html>

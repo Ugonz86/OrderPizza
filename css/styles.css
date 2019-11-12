@@ -34,9 +34,19 @@ h5 {
   font-size: 110%;
 }
 
+p {
+  font-size: 30px;
+  text-shadow: black 1px 1px 3px;
+}
+
+button {
+  width: 300px;
+  height: 75px;
+}
+
 .container {
 text-align: center;
-margin-top: 30px;
+width: inherit;
 }
 
 .grid-item {
@@ -54,15 +64,15 @@ margin-top: 30px;
   padding-left: 30px;
 }
 
-#sizeMenu, #toppingMenu, #subtotal, #receipt {
+#sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder {
   display: none;
 }
 
-#intro, #sizeMenu, #toppingMenu, #receipt, #subtotal {
+#intro, #sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
-  margin-top: 30px;
+  margin-top: 10px;
   color: white;
   font-size: 175%;
 }
@@ -71,7 +81,16 @@ margin-top: 30px;
   text-align: left;
 }
 
-p {
-  font-size: 30px;
-  text-shadow: black 1px 1px 3px;
+#bye {
+  color: #aed100;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: #333;
+  text-align: center;
 }

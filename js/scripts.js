@@ -44,8 +44,12 @@ Pizza.prototype.price = function() {
       price += 2;
     } else if (this.topping[i] === "Basil") {
       price += 1;
+    } else if (this.topping[i] === "Arugula") {
+      price += 1;
+    } else if (this.topping[i] === "Blue Cheese") {
+      price += 1;
+      }
     }
-  }
   console.log(price);
   return price;
 };
@@ -66,6 +70,7 @@ function displayOrdersDetail(orderListToDisplay) {
   });
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
+  $("#total2").text(order.total);
 };
 
 $(document).ready(function() {
@@ -82,7 +87,7 @@ $(document).ready(function() {
   });
 
   $("#toppingMenuButton").click(function() {
-    $("#subtotal").fadeIn("slow");
+    $("#subtotal").slideDown("slow");
     $("#toppingMenu").hide();
 
     //Subtotal Display
@@ -98,18 +103,32 @@ $(document).ready(function() {
   });
 
   $("#subtotalButton").click(function() {
-    $("#receipt").fadeIn();
+    $("#receipt").slideDown("slow");
     $("#subtotal").hide();
   });
+
+  $("#receiptButton").click(function() {
+    $("#thankYou").fadeIn();
+    $("#receipt").hide();
+  });
+
+  $("#modifyOrderButton").click(function() {
+    $("#modifyOrder").fadeIn();
+    displayOrdersDetail(order);
+    $("#total3").text(order.total);
+    $("#subtotal").hide();
+  });
+
   $("#cancelOrder").click(function() {
     location.reload();
   });
+
   $("#addPizza").click(function() {
 
     $("#sizeMenu").fadeIn();
     $("#subtotal").hide();
   });
-  $("#receiptButton").click(function() {
+  $("#thankYouButton").click(function() {
     location.reload();
   });
 });

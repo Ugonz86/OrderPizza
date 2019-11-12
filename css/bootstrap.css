@@ -2957,6 +2957,7 @@ select[multiple].input-lg {
   .form-inline .checkbox input[type="checkbox"] {
     position: relative;
     margin-left: 0;
+
   }
   .form-inline .has-feedback .form-control-feedback {
     top: 0;
@@ -3171,27 +3172,27 @@ fieldset[disabled] .btn-primary.focus {
   background-color: #fff;
 }
 .btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  color: #333;
+  background-color: #aed100;
+  border-color: #a1c200;
 }
 .btn-success:focus,
 .btn-success.focus {
   color: #fff;
-  background-color: #449d44;
-  border-color: #255625;
+  background-color: #99b50d;
+  border-color: #a1c200;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #99b50d;
+  border-color: #a1c200;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
   color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #99b50d;
+  border-color: #a1c200;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -3203,8 +3204,8 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
   color: #fff;
-  background-color: #398439;
-  border-color: #255625;
+  background-color: #9bba00;
+  border-color: #a1c200;
 }
 .btn-success:active,
 .btn-success.active,
@@ -3228,25 +3229,25 @@ fieldset[disabled] .btn-success.focus {
   background-color: #fff;
 }
 .btn-info {
-  color: #fff;
-  background-color: #5bc0de;
-  /* border-color: #46b8da; */
+  color: #333;
+  background-color: white;
+
 }
 .btn-info:focus,
 .btn-info.focus {
-  background-color: #31b0d5;
+  background-color: black;
 
 }
 .btn-info:hover {
-
-  background-color: orange;
+  color: white;
+  background-color: black;
 
 }
 .btn-info:active,
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
-  color: #fff;
-  background-color: #31b0d5;
+  color: white;
+  background-color: black;
 
 }
 .btn-info:active:hover,
@@ -3341,7 +3342,7 @@ fieldset[disabled] .btn-warning.focus {
   background-color: #fff;
 }
 .btn-danger {
-  color: #fff;
+  color: #333;
   background-color: #d9534f;
   border-color: #d43f3a;
 }
