@@ -114,8 +114,8 @@ $(document).ready(function() {
 
   $("#modifyOrderButton").click(function() {
     $("#modifyOrder").fadeIn();
-    displayOrdersDetail(order);
-    $("#total3").text(order.total);
+    // displayOrdersDetail(order);
+    // $("#total3").text(order.total);
     $("#subtotal").hide();
   });
 

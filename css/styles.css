@@ -18,6 +18,12 @@ h1 {
   text-shadow: black 1px 1px 3px;
 }
 
+h6 {
+  color: white;
+  font-size: 800%;
+  text-shadow: black 2px 2px 3px;
+}
+
 h3 {
   color: white;
   letter-spacing: 5px;
@@ -64,11 +70,15 @@ width: inherit;
   padding-left: 30px;
 }
 
+#intro {
+  margin-top: 75px;
+}
+
 #sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder {
   display: none;
 }
 
-#intro, #sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder {
+#sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
