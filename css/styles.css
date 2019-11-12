@@ -8,6 +8,7 @@ html {
 body {
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
+  text-shadow: black 1px 1px 3px;
 }
 
 h1 {
@@ -16,6 +17,12 @@ h1 {
   font-size: 600%;
   font-weight: bold;
   text-shadow: black 1px 1px 3px;
+}
+
+h6 {
+  color: white;
+  font-size: 800%;
+  text-shadow: black 2px 2px 3px;
 }
 
 h3 {
@@ -64,11 +71,28 @@ width: inherit;
   padding-left: 30px;
 }
 
-#sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder {
+/* #delivery {
+  justify-content: center;
+  text-align: center;
+} */
+#address form{
+  /* width: 200px;
+  /* justify-content: center; */
+  /* text-align: center; */
+  /* text-align: left;
+  padding: 10px;
+  padding-left: 30px; */ */
+}
+
+#intro {
+  margin-top: 75px;
+}
+
+#sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder, #delivery, #displayDeliveryInfo {
   display: none;
 }
 
-#intro, #sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder {
+#sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder, #delivery, #displayDeliveryInfo {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
