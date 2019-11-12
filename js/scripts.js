@@ -195,10 +195,3 @@ $(document).ready(function() {
     event.preventDefault();
   });
 });
-
-
-// var remove = $("#remove");
-//   remove.empty();
-//   remove.append("<button class='btn btn-default' id=" + pizza.id + ">Delete</button>");
-// $("#remove").on("click", ".btn btn-default", function() {
-//   order.deletePizza(this.id);
