@@ -4,6 +4,7 @@ function Order() {
   this.pizzas = [];
   this.total = 0;
   this.currentId = -1;
+  this.address = [];
 };
 //Order prototype methods
 Order.prototype.addPizza = function (pizza) {
@@ -66,12 +67,41 @@ function displayOrdersDetail(orderListToDisplay) {
   var orderList = $("ul#orders");
   var details = "";
   orderListToDisplay.pizzas.forEach(function(pizza) {
-    details += "<li id=" + pizza.id + ">" + pizza.size + " " + "with" + " " + pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
+    details += "<li id=" + pizza.id + ">" + pizza.size + " " + "with" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
   });
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
   $("#total2").text(order.total);
+  $("#total3").text(order.total);
+
 };
+
+// var newContact = new Contact();
+// $("#deliveryInfo").text(newContact.address);
+// console.log(newContact);
+
+// function Contact(firstName, lastName, phoneNumber, emailAddress, streetAddress, city, state, zipcode){
+//   this.firstName = firstName,
+//   this.lastName = lastName,
+//   this.phoneNumber = phoneNumber,
+//   this.emailAddress = emailAddress,
+//   this.streetAddress = streetAddress,
+//   this.city = city,
+//   this.state = state,
+//   this.zipcode = zipcode
+// }
+//
+// Contact.prototype.fullContact = function() {
+//   return this.firstName + " " + this.lastName + " " + this.phoneNumber + " " + this.emailAddress + " " + this.streetAddress + " " + this.city + " " + this.state + " " + this.zipcode;
+// }
+//
+// function showContact(contact) {
+//   $("#deliveryInfo").slideDown();
+//   $("#.first-name").html(this.firstName);
+//   console.log(showContact());
+// }
+
+
 
 $(document).ready(function() {
 
@@ -95,7 +125,6 @@ $(document).ready(function() {
     $("input:checkbox[name='topping']:checked").each(function(){
       selectedTopping.push($(this).val());
     });
-    console.log(selectedTopping);
     newPizza = new Pizza(selectedSize, selectedTopping);
     selectedTopping = [];//Clear array for next pizza
     order.addPizza(newPizza);
@@ -112,12 +141,39 @@ $(document).ready(function() {
     $("#receipt").hide();
   });
 
+  $("#requestDelivery").click(function() {
+    $("#delivery").fadeIn();
+    $("#receipt").hide();
+
+
+  });
+
+  $("#addressButton").click(function() {
+    $("#displayDeliveryInfo").fadeIn();
+    $("#delivery").hide();
+
+
+  });
+
+  $("#deliveryInfoButton").click(function() {
+    $("#thankYou").fadeIn();
+    // displayOrdersDetail(order);
+    // $("#total3").text(order.total);
+    $("#displayDeliveryInfo").hide();
+  });
+
+  // $("#requestDelivery").click(function() {
+  //   $("#delivery").fadeIn();
+  //   $("#receipt").hide();
+  // });
+
   $("#modifyOrderButton").click(function() {
     $("#modifyOrder").fadeIn();
     // displayOrdersDetail(order);
     // $("#total3").text(order.total);
     $("#subtotal").hide();
   });
+
 
   $("#cancelOrder").click(function() {
     location.reload();
@@ -128,7 +184,54 @@ $(document).ready(function() {
     $("#sizeMenu").fadeIn();
     $("#subtotal").hide();
   });
+
   $("#thankYouButton").click(function() {
     location.reload();
   });
+
+  $("#address").submit(function(event) {
+    var firstNameInput = $("input#firstName").val();
+    var lastNameInput = $("input#lastName").val();
+    var phoneNumberInput = $("input#phoneNumber").val();
+    // var firstName = $("input#firstName").val();
+    // var firstName = $("input#firstName").val();
+    // var firstName = $("input#firstName").val();
+    // var firstName = $("input#firstName").val();
+    $(".firstName").text(firstNameInput);
+    $(".lastName").text(lastNameInput);
+    $(".phoneNumber").text(phoneNumberInput);
+    // $("#email").append();
+    // $("#streetAddress").append();
+    // $("#city").append();
+    // $("#state").append();
+    // $("#zipcode").append();
+
+    $("#displayDeliveryInfo").show();
+    event.preventDefault();
+  });
+  // $("form#address").submit(function(event) {
+  //   event.preventDefault();
+  //
+  //   var inputtedFirstName = $("input#first-name").val();
+  //   var inputtedLastName = $("input#last-name").val();
+  //   var inputtedPhoneNumber = $("input#phone-number").val();
+  //   var inputedEmailAddress = $("input#email-address").val();
+  //   var inputedStreetAddress = $("input#street-address").val();
+  //   var inputedCity = $("input#city").val();
+  //   var inputedState = $("input#state").val();
+  //   var inputedZipcode = $("input#zipcode").val();
+  //
+  //   $("input#first-name").val("");
+  //   $("input#last-name").val("");
+  //   $("input#phone-number").val("");
+  //   $("input#email-address").val("");
+  //   $("input#street-address").val("");
+  //   $("input#city").val("");
+  //   $("input#state").val("");
+  //   $("input#zipcode").val("");
+  //
+  //   var fullContact = new Contact (inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedStreetAddress, inputtedCity, inputtedState, inputtedZipcode);
+  //   console.log(fullContact);
+  //
+  // });
 });
