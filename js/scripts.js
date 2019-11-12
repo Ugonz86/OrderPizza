@@ -159,11 +159,11 @@ $(document).ready(function() {
     $(".firstName").text(firstNameInput);
     $(".lastName").text(lastNameInput);
     $(".phoneNumber").text(phoneNumberInput);
-    $("#email").text(emailAddressInput);
-    $("#streetAddress").text(streetAddressInput);
-    $("#city").text(cityInput);
-    $("#state").text(stateInput);
-    $("#zipcode").text(zipcodeInput);
+    $(".email").text(emailAddressInput);
+    $(".streetAddress").text(streetAddressInput);
+    $(".city").text(cityInput);
+    $(".state").text(stateInput);
+    $(".zipcode").text(zipcodeInput);
 
     $("#displayDeliveryInfo").show();
     event.preventDefault();
