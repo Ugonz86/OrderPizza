@@ -3,6 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
     <title>Gallo's Pizza</title>
@@ -14,7 +15,7 @@
       <br>
       <div id="orderForm">
         <div class="container" id="intro">
-          <h2>Benvenuti!</h2>
+          <h3>Benvenuti!</h3>
           <br>
           <button type="button" class="btn btn-default" id="introButton">Start your order</button>
           <br>
@@ -22,9 +23,10 @@
         </div>
           <div class="container" id="sizeMenu">
             <div class="form-group">
+              <h3>Select Pizza Size.</h3>
+              <h4>Our pizzas come with puréed tomatoes, mozzarella and authentic italian ingredients.</h4>
+              <br>
               <div class="radio">
-                <h3>Select Pizza Size</h3>
-                <br>
                 <label>
                   <input type="radio" name="size" value="Personale" checked> Personale
                 </label>
@@ -53,7 +55,7 @@
             <div class="form-group">
               <h3>Add Toppings</h3>
               <div class="checkbox">
-                  <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
+                <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
               </div>
               <div class="checkbox">
                 <input type="checkbox" name="topping" value="Prosciutto"> Prosciutto
@@ -72,31 +74,19 @@
           <div class="container" id="subtotal">
             <h3>Your Order Summary</h3>
             <br>
-            <div class="grid-container" id="totalDisplay">
-              <label for="size">Pizza Size:</label>
-              <div class="grid-item" id="size"></div>
-              <hr>
-              <label for="size">Quantity:</label>
-              <div class="grid-item" id="sizeQuantity"></div>
-              <hr>
-              <label for="size">Toppings:</label>
-              <div class="grid-item" id="toppingList"></div>
-              <hr>
-              <label for="size">Total:</label>
-              <div class="grid-item" id="total"></div>
-              <br>
-            </div>
+            <ul id="orders">
+            </ul>
+            <p>Total: $<span id="total"></span>.00</p>
             <br>
-            <br>
-            <button type="button" class="btn btn-default" id="subtotalButton">Complete Your Order</button>
-            <button type="button" class="btn btn-default" id="modifyOrder">Modify Your Order</button>
-            <button type="button" class="btn btn-default" id="addPizza">Add Another Pizza</button>
+            <button type="button" class="btn btn-success" id="subtotalButton">Complete Your Order</button>
+            <button type="button" class="btn btn-info" id="addPizza">Add Another Pizza</button>
+            <button type="button" class="btn btn-danger" id="cancelOrder">Cancel Your Order</button>
             <br>
             <br>
           </div>
           <div class="container" id="receipt">
             <br>
-            <h3>Thank you for your visit. Arrivederci!</h3>
+            <h3>Thank you for your visit. <em>Arrivederci!</em></h3>
             <br>
             <button type="button" class="btn btn-default" id="receiptButton">Go Home</button>
             <br>
