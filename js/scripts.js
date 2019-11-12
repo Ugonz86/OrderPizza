@@ -150,18 +150,20 @@ $(document).ready(function() {
     var firstNameInput = $("input#firstName").val();
     var lastNameInput = $("input#lastName").val();
     var phoneNumberInput = $("input#phoneNumber").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
+    var emailAddressInput = $("input#emailAddress").val();
+    var streetAddressInput = $("input#streetAddress").val();
+    var cityInput = $("input#city").val();
+    var stateInput = $("input#state").val();
+    var zipcodeInput = $("input#zipcode").val();
+
     $(".firstName").text(firstNameInput);
     $(".lastName").text(lastNameInput);
     $(".phoneNumber").text(phoneNumberInput);
-    // $("#email").append();
-    // $("#streetAddress").append();
-    // $("#city").append();
-    // $("#state").append();
-    // $("#zipcode").append();
+    $("#email").text(emailAddressInput);
+    $("#streetAddress").text(streetAddressInput);
+    $("#city").text(cityInput);
+    $("#state").text(stateInput);
+    $("#zipcode").text(zipcodeInput);
 
     $("#displayDeliveryInfo").show();
     event.preventDefault();
