@@ -8,7 +8,6 @@ html {
 body {
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
-  text-shadow: black 1px 1px 3px;
 }
 
 h1 {
@@ -71,21 +70,8 @@ width: inherit;
   padding-left: 30px;
 }
 
-/* #delivery {
-  justify-content: center;
-  text-align: center;
-} */
-#address form{
-  /* width: 200px;
-  /* justify-content: center; */
-  /* text-align: center; */
-  /* text-align: left;
-  padding: 10px;
-  padding-left: 30px; */ */
-}
-
 #intro {
-  margin-top: 75px;
+  margin-top: 150px;
 }
 
 #sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder, #delivery, #displayDeliveryInfo {
@@ -96,7 +82,7 @@ width: inherit;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
-  margin-top: 10px;
+  margin-top: 50px;
   color: white;
   font-size: 175%;
 }

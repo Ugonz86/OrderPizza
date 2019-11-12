@@ -35,7 +35,6 @@ Pizza.prototype.price = function() {
   }
 
   for (var i = 0; i < this.topping.length; i++) {
-    console.log("het");
 
     if(this.topping[i] === "Pepperoni") {
       price += 3;
@@ -51,7 +50,7 @@ Pizza.prototype.price = function() {
       price += 1;
       }
     }
-  console.log(price);
+
   return price;
 };
 
@@ -76,35 +75,7 @@ function displayOrdersDetail(orderListToDisplay) {
 
 };
 
-// var newContact = new Contact();
-// $("#deliveryInfo").text(newContact.address);
-// console.log(newContact);
-
-// function Contact(firstName, lastName, phoneNumber, emailAddress, streetAddress, city, state, zipcode){
-//   this.firstName = firstName,
-//   this.lastName = lastName,
-//   this.phoneNumber = phoneNumber,
-//   this.emailAddress = emailAddress,
-//   this.streetAddress = streetAddress,
-//   this.city = city,
-//   this.state = state,
-//   this.zipcode = zipcode
-// }
-//
-// Contact.prototype.fullContact = function() {
-//   return this.firstName + " " + this.lastName + " " + this.phoneNumber + " " + this.emailAddress + " " + this.streetAddress + " " + this.city + " " + this.state + " " + this.zipcode;
-// }
-//
-// function showContact(contact) {
-//   $("#deliveryInfo").slideDown();
-//   $("#.first-name").html(this.firstName);
-//   console.log(showContact());
-// }
-
-
-
 $(document).ready(function() {
-
   $("#introButton").click(function() {
     $("#sizeMenu").fadeIn();
     $("#intro").hide();
@@ -117,7 +88,7 @@ $(document).ready(function() {
   });
 
   $("#toppingMenuButton").click(function() {
-    $("#subtotal").slideDown("slow");
+    $("#subtotal").slideDown();
     $("#toppingMenu").hide();
 
     //Subtotal Display
@@ -144,36 +115,22 @@ $(document).ready(function() {
   $("#requestDelivery").click(function() {
     $("#delivery").fadeIn();
     $("#receipt").hide();
-
-
   });
 
   $("#addressButton").click(function() {
     $("#displayDeliveryInfo").fadeIn();
     $("#delivery").hide();
-
-
   });
 
   $("#deliveryInfoButton").click(function() {
     $("#thankYou").fadeIn();
-    // displayOrdersDetail(order);
-    // $("#total3").text(order.total);
     $("#displayDeliveryInfo").hide();
   });
 
-  // $("#requestDelivery").click(function() {
-  //   $("#delivery").fadeIn();
-  //   $("#receipt").hide();
-  // });
-
   $("#modifyOrderButton").click(function() {
     $("#modifyOrder").fadeIn();
-    // displayOrdersDetail(order);
-    // $("#total3").text(order.total);
     $("#subtotal").hide();
   });
-
 
   $("#cancelOrder").click(function() {
     location.reload();
@@ -193,45 +150,22 @@ $(document).ready(function() {
     var firstNameInput = $("input#firstName").val();
     var lastNameInput = $("input#lastName").val();
     var phoneNumberInput = $("input#phoneNumber").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
-    // var firstName = $("input#firstName").val();
+    var emailAddressInput = $("input#emailAddress").val();
+    var streetAddressInput = $("input#streetAddress").val();
+    var cityInput = $("input#city").val();
+    var stateInput = $("input#state").val();
+    var zipcodeInput = $("input#zipcode").val();
+
     $(".firstName").text(firstNameInput);
     $(".lastName").text(lastNameInput);
     $(".phoneNumber").text(phoneNumberInput);
-    // $("#email").append();
-    // $("#streetAddress").append();
-    // $("#city").append();
-    // $("#state").append();
-    // $("#zipcode").append();
+    $(".email").text(emailAddressInput);
+    $(".streetAddress").text(streetAddressInput);
+    $(".city").text(cityInput);
+    $(".state").text(stateInput);
+    $(".zipcode").text(zipcodeInput);
 
     $("#displayDeliveryInfo").show();
     event.preventDefault();
   });
-  // $("form#address").submit(function(event) {
-  //   event.preventDefault();
-  //
-  //   var inputtedFirstName = $("input#first-name").val();
-  //   var inputtedLastName = $("input#last-name").val();
-  //   var inputtedPhoneNumber = $("input#phone-number").val();
-  //   var inputedEmailAddress = $("input#email-address").val();
-  //   var inputedStreetAddress = $("input#street-address").val();
-  //   var inputedCity = $("input#city").val();
-  //   var inputedState = $("input#state").val();
-  //   var inputedZipcode = $("input#zipcode").val();
-  //
-  //   $("input#first-name").val("");
-  //   $("input#last-name").val("");
-  //   $("input#phone-number").val("");
-  //   $("input#email-address").val("");
-  //   $("input#street-address").val("");
-  //   $("input#city").val("");
-  //   $("input#state").val("");
-  //   $("input#zipcode").val("");
-  //
-  //   var fullContact = new Contact (inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedStreetAddress, inputtedCity, inputtedState, inputtedZipcode);
-  //   console.log(fullContact);
-  //
-  // });
 });
