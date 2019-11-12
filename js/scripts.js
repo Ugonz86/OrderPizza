@@ -54,6 +54,23 @@ Pizza.prototype.price = function() {
   return price;
 };
 
+Order.prototype.deletePizza = function() {
+  for (var i=0; i< this.pizzas.lenth; i++) {
+    if (this.pizzas[i]) {
+      if (this.pizzas[i].id == id) {
+        delete this.pizzas[i];
+        return true;
+      }
+    }
+  };
+  return false;
+}
+
+$("#remove").on("click", ".deleteButton", function() {
+  order.deletePizza(this.id);
+
+});
+
 //User interface logic
 //Global variables
 var selectedSize;
@@ -67,13 +84,17 @@ function displayOrdersDetail(orderListToDisplay) {
   var details = "";
   orderListToDisplay.pizzas.forEach(function(pizza) {
     details += "<li id=" + pizza.id + ">" + pizza.size + " " + "with" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
+
   });
+
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
   $("#total2").text(order.total);
   $("#total3").text(order.total);
 
 };
+
+
 
 $(document).ready(function() {
   $("#introButton").click(function() {
@@ -127,9 +148,14 @@ $(document).ready(function() {
     $("#displayDeliveryInfo").hide();
   });
 
-  $("#modifyOrderButton").click(function() {
-    $("#modifyOrder").fadeIn();
+  $("#removePizzaButton").click(function() {
+    $("#remove").fadeIn();
     $("#subtotal").hide();
+  });
+
+  $("#removeNowButton").click(function() {
+    $("#subtotal").slideDown();
+    $("#remove").hide();
   });
 
   $("#cancelOrder").click(function() {
@@ -169,3 +195,10 @@ $(document).ready(function() {
     event.preventDefault();
   });
 });
+
+
+// var remove = $("#remove");
+//   remove.empty();
+//   remove.append("<button class='btn btn-default' id=" + pizza.id + ">Delete</button>");
+// $("#remove").on("click", ".btn btn-default", function() {
+//   order.deletePizza(this.id);

@@ -8,6 +8,7 @@ html {
 body {
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
+
 }
 
 h1 {
@@ -74,11 +75,11 @@ width: inherit;
   margin-top: 150px;
 }
 
-#sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder, #delivery, #displayDeliveryInfo {
+#sizeMenu, #toppingMenu, #subtotal, #receipt, #thankYou, #modifyOrder, #delivery, #displayDeliveryInfo, #remove {
   display: none;
 }
 
-#sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder, #delivery, #displayDeliveryInfo {
+#sizeMenu, #toppingMenu, #thankYou, #subtotal, #receipt, #modifyOrder, #delivery, #displayDeliveryInfo, #remove {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
