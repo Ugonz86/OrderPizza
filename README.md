@@ -1,6 +1,6 @@
 # _Order Pizza_
 
-#### _An Object-Oriented JavaScript website for a pizza company where a user can choose one or more individual toppings and a size to order a pizza and see the final cost. 11/08/19_
+#### _An Object-Oriented JavaScript website for a pizza company where a user can choose one or multiple pizzas of different size and add one or multiple toppings, see the final cost and choose a get the order delivered if desired. 11/08/19_
 
 #### By _**Uriel Gonzalez**_
 
@@ -10,18 +10,25 @@
 | :----------- | :----------------------| :----------- |
 | **Homepage**   | User accesses homepage | Homepage with size menu |
 | **Homepage** | User clicks next | Topping menu appears appears |
-| **Topping Menu Page** | Selects one or multiple options and a can click a next button | Subtotal page appears |
-| **Subtotal Page** | User clicks go back button |  Can add or remove selections |
-| **Subtotal Page** | User clicks on finish order |  Thank you/Receipt page appears |
-| **Thank You/Receipt Page** | User clicks on go home |  Homepage page appears |
+| **Topping Menu Page** | Selects one or multiple options and a can click on Order Summary button | Subtotal page with full order detail appears |
+| **Subtotal Page** | User clicks on complete order |  Thank you page appears |
+| **Subtotal Page** | User clicks on add pizza |  The add pizza size page appears |
+| **Subtotal Page** | User clicks cancel order |  Page resets / Goes Home |
+| **Complete Order** | User clicks Complete Order |  Thank you page appears |
+| **Complete Order** | User clicks Delivery Option |  Address form page appears |
+| **Delivery Option** | User clicks submit address |  Address confirmation with total cost appears |
+| **Cancel Order** | User clicks on cancel order |  Page resets / Goes Home |
+| **Thank You Page** | User clicks on go home|  Page resets / Goes Home |
+
 
 ## Setup/Installation Requirements
 
 * _Open Command Line_
 * _cd Desktop_
-* _Git Clone https://github.com/Ugonz86/OrderPizza.git_
+* _git Clone https://github.com/Ugonz86/OrderPizza.git_
 * _cd OrderPizza_
-* _Open index.html_
+* _0pen index.html_
+* _Expand web browser to full screen for better display_
 
 ## Known Bugs
 
