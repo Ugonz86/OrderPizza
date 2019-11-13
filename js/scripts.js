@@ -186,7 +186,7 @@ $(document).ready(function() {
     $(".firstName").text(firstNameInput);
     $(".lastName").text(lastNameInput);
     $(".phoneNumber").text(phoneNumberInput);
-    $(".email").text(emailAddressInput);
+    $(".emailAddress").text(emailAddressInput);
     $(".streetAddress").text(streetAddressInput);
     $(".city").text(cityInput);
     $(".state").text(stateInput);
