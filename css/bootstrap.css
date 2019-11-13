@@ -2957,7 +2957,11 @@ select[multiple].input-lg {
   .form-inline .checkbox input[type="checkbox"] {
     position: relative;
     margin-left: 0;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> master
   }
   .form-inline .has-feedback .form-control-feedback {
     top: 0;

@@ -4,7 +4,7 @@ function Order() {
   this.pizzas = [];
   this.total = 0;
   this.currentId = -1;
-  this.address = [];
+  // this.address = [];
 };
 //Order prototype methods
 Order.prototype.addPizza = function (pizza) {
@@ -36,10 +36,10 @@ Pizza.prototype.price = function() {
 
   for (var i = 0; i < this.topping.length; i++) {
 
-    if(this.topping[i] === "Pepperoni") {
-      price += 3;
-    } else if (this.topping[i] === "Prosciutto") {
+    if(this.topping[i] === "Prosciutto") {
       price += 4;
+    } else if (this.topping[i] === "Pepperoni") {
+      price += 3;
     } else if (this.topping[i] === "Sausage") {
       price += 2;
     } else if (this.topping[i] === "Basil") {
@@ -50,14 +50,14 @@ Pizza.prototype.price = function() {
       price += 1;
       }
     }
-
   return price;
 };
 
-Order.prototype.deletePizza = function() {
-  for (var i=0; i< this.pizzas.lenth; i++) {
+Order.prototype.deletePizza = function(id) {
+  for (var i=0; i< this.pizzas.length; i++) {
     if (this.pizzas[i]) {
       if (this.pizzas[i].id == id) {
+        this.total -= this.pizzas[i].price();
         delete this.pizzas[i];
         return true;
       }
@@ -66,11 +66,6 @@ Order.prototype.deletePizza = function() {
   return false;
 }
 
-$("#remove").on("click", ".deleteButton", function() {
-  order.deletePizza(this.id);
-
-});
-
 //User interface logic
 //Global variables
 var selectedSize;
@@ -78,23 +73,20 @@ var selectedTopping = [];
 var order = new Order();
 var newPizza;
 var total;
+var orderList = $("ul#orders");
+var details = "";
+var selectedPizzas = [];
 
 function displayOrdersDetail(orderListToDisplay) {
   var orderList = $("ul#orders");
   var details = "";
   orderListToDisplay.pizzas.forEach(function(pizza) {
-    details += "<li id=" + pizza.id + ">" + pizza.size + " " + "with" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
-
+    details += "<li id=" + pizza.id + "><input type='checkbox' name='pizzas' value=" + pizza.id + ">" + pizza.size + " " + "-" + " " +  pizza.topping +":" + " " + "$" + pizza.price() + ".00" + "</li>";
   });
-
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
-  $("#total2").text(order.total);
-  $("#total3").text(order.total);
-
+  $("#total2").text(order.total);//Display Purchase Total in different location
 };
-
-
 
 $(document).ready(function() {
   $("#introButton").click(function() {
@@ -111,9 +103,7 @@ $(document).ready(function() {
   $("#toppingMenuButton").click(function() {
     $("#subtotal").slideDown();
     $("#toppingMenu").hide();
-
-    //Subtotal Display
-
+//Subtotal Display
     $("input:checkbox[name='topping']:checked").each(function(){
       selectedTopping.push($(this).val());
     });
@@ -125,6 +115,12 @@ $(document).ready(function() {
 
   $("#subtotalButton").click(function() {
     $("#receipt").slideDown("slow");
+    $("#subtotal").hide();
+  });
+
+  $("#addPizza").click(function() {
+
+    $("#sizeMenu").fadeIn();
     $("#subtotal").hide();
   });
 
@@ -154,18 +150,22 @@ $(document).ready(function() {
   });
 
   $("#removeNowButton").click(function() {
+    $("input:checkbox[name='pizzas']:checked").each(function(){
+      selectedPizzas.push(parseInt($(this).val()));
+    });
+    console.log(selectedPizzas);
+    for(var i=0;i<selectedPizzas.length;i++){
+      order.deletePizza(selectedPizzas[i]);
+    }
+    displayOrdersDetail(order);
+    console.log(order.pizzas);
     $("#subtotal").slideDown();
     $("#remove").hide();
   });
 
+
   $("#cancelOrder").click(function() {
     location.reload();
-  });
-
-  $("#addPizza").click(function() {
-
-    $("#sizeMenu").fadeIn();
-    $("#subtotal").hide();
   });
 
   $("#thankYouButton").click(function() {
