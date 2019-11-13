@@ -81,11 +81,12 @@ function displayOrdersDetail(orderListToDisplay) {
   var orderList = $("ul#orders");
   var details = "";
   orderListToDisplay.pizzas.forEach(function(pizza) {
-    details += "<li id=" + pizza.id + "><input type='checkbox' name='pizzas' value=" + pizza.id + ">" + pizza.size + " " + "-" + " " +  pizza.topping +":" + " " + "$" + pizza.price() + ".00" + "</li>";
+    details += "<li id=" + pizza.id + "><input type='checkbox' name='pizzas' value=" + pizza.id + ">" + pizza.size + " " + "-" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
   });
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
   $("#total2").text(order.total);//Display Purchase Total in different location
+  $("#total3").text(order.total);//Display Purchase Total in different location
 };
 
 $(document).ready(function() {
