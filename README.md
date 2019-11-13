@@ -16,6 +16,7 @@
 | **Subtotal Page** | User clicks cancel order |  Page resets / Goes Home |
 | **Complete Order** | User clicks Complete Order |  Thank you page appears |
 | **Complete Order** | User clicks Delivery Option |  Address form page appears |
+| **Remove Pizza** | User clicks on remove a pizza button | Checked pizzas gets deleted |
 | **Delivery Option** | User clicks submit address |  Address confirmation with total cost appears |
 | **Cancel Order** | User clicks on cancel order |  Page resets / Goes Home |
 | **Thank You Page** | User clicks on go home|  Page resets / Goes Home |

@@ -56,22 +56,22 @@
               <h3>Add Toppings</h3>
               <h2>You may add one, multiple or none.</h2>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni
+                <input type="checkbox" name="topping" value="Pepperoni" checkbox> Pepperoni $3.00
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Prosciutto"> Prosciutto
+                <input type="checkbox" name="topping" value="Prosciutto"> Prosciutto $4.00
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Sausage"> Sausage
+                <input type="checkbox" name="topping" value="Sausage"> Sausage $2.00
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Basil"> Basil
+                <input type="checkbox" name="topping" value="Basil"> Basil $1.00
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Arugula"> Arugula
+                <input type="checkbox" name="topping" value="Arugula"> Arugula $1.00
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="topping" value="Blue Cheese"> Blue Cheese
+                <input type="checkbox" name="topping" value="Blue Cheese"> Blue Cheese $1.00
               </div>
               <br>
               <button type="button" class="btn btn-default" id="toppingMenuButton">Your Order Summary</button>
@@ -83,7 +83,9 @@
             <br>
             <ul id="orders">
             </ul>
+            <br>
             <p>Total: $<span id="total"></span>.00</p>
+            <br>
             <br>
             <button type="button" class="btn btn-success" id="subtotalButton">Complete Your Order</button>
             <button type="button" class="btn btn-info" id="addPizza">Add Another Pizza</button>
@@ -103,7 +105,9 @@
           </div>
           <div class="container" id=receipt>
             <h3>Your Order Total Is:</h3>
-            <h2>$<span id="total2"></span>.00</h2>
+            <br>
+            <h3>$<span id="total2"></span>.00</h3>
+            <br>
             <br>
             <button type="button" class="btn btn-success" id="receiptButton">Complete Your Order</button>
             <button type="button" class="btn btn-info" id="requestDelivery">Request Delivery</button>
