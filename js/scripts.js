@@ -81,8 +81,21 @@ function displayOrdersDetail(orderListToDisplay) {
   var orderList = $("ul#orders");
   var details = "";
   orderListToDisplay.pizzas.forEach(function(pizza) {
+    details += "<li id=" + pizza.id + ">" + pizza.size + " " + "-" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
+  });
+  orderList.html(details);
+  $("#total").text(order.total);//Display Purchase Total
+  $("#total2").text(order.total);//Display Purchase Total in different location
+  $("#total3").text(order.total);//Display Purchase Total in different location
+};
+
+function displayOrdersRemove(orderListToDisplay) {
+  var orderList = $("ul#ordersRemove");
+  var details = "";
+  orderListToDisplay.pizzas.forEach(function(pizza) {
     details += "<li id=" + pizza.id + "><input type='checkbox' name='pizzas' value=" + pizza.id + ">" + pizza.size + " " + "-" + " " +  pizza.topping + " " + "$" + pizza.price() + ".00" + "</li>";
   });
+
   orderList.html(details);
   $("#total").text(order.total);//Display Purchase Total
   $("#total2").text(order.total);//Display Purchase Total in different location
@@ -146,6 +159,7 @@ $(document).ready(function() {
   });
 
   $("#removePizzaButton").click(function() {
+    displayOrdersRemove(order);//Displays order with checkbox in order to be removed.
     $("#remove").fadeIn();
     $("#subtotal").hide();
   });
@@ -154,16 +168,19 @@ $(document).ready(function() {
     $("input:checkbox[name='pizzas']:checked").each(function(){
       selectedPizzas.push(parseInt($(this).val()));
     });
-    console.log(selectedPizzas);
+    console.log(selectedPizzas[0]);
     for(var i=0;i<selectedPizzas.length;i++){
       order.deletePizza(selectedPizzas[i]);
     }
-    displayOrdersDetail(order);
+    displayOrdersDetail(order);//Displays updated order list.
     console.log(order.pizzas);
     $("#subtotal").slideDown();
     $("#remove").hide();
   });
-
+  $("#goBack").click(function() {
+    $("#subtotal").slideDown();
+    $("#remove").hide();
+  });
 
   $("#cancelOrder").click(function() {
     location.reload();
